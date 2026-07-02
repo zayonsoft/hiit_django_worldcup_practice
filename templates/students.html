@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Our Students</title>
+    <style>
+      body {
+        padding: 20px;
+      }
+      /* Simple styling to add visible borders and spacing */
+      table {
+        width: 100%;
+        border-collapse: collapse; /* Prevents double borders */
+      }
+      th,
+      td {
+        border: 2px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #05077d;
+        color: whitesmoke;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Name of Students by {{programmer_name}}</h2>
+    <table>
+      <!-- Table Header Row -->
+      <tr>
+        <th>Matric No</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Middle Name</th>
+        <th>Course</th>
+        <th>Year</th>
+      </tr>
+      <!-- Table Data Row 1 -->
+      {% for student in students %}
+      <tr>
+        <td>{{student.matric_number}}</td>
+        <td>{{student.first_name}}</td>
+        <td>{{student.last_name}}</td>
+        <td>{{student.middle_name}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
