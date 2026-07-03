@@ -1,0 +1,66 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'output.css' %}" />
+  </head>
+  <body>
+    <div
+      class="bg-gray-50 p-5 max-w-250 mx-auto -translate-1/2 absolute left-1/2 top-1/2 shadow-2xl"
+    >
+      <form class="grid gap-2 min-w-100" action="" method="POST">
+        {% csrf_token %} <br />
+        {% for message in messages %}
+        <p class="text-center font-semibold">{{message}}</p>
+        {% endfor %}
+        <h3 class="text-center">Add Student</h3>
+        <input
+          class="p-2 border border-gray-500"
+          name="matric_number"
+          placeholder="Matric Number"
+          type="text"
+        />
+        <input
+          class="p-2 border border-gray-500"
+          name="first_name"
+          placeholder="First Name"
+          type="text"
+        />
+        <input
+          class="p-2 border border-gray-500"
+          name="last_name"
+          placeholder="Last Name"
+          type="text"
+        />
+        <input
+          class="p-2 border border-gray-500"
+          name="middle_name"
+          placeholder="Middle Name"
+          type="text"
+        />
+        <input
+          class="p-2 border border-gray-500"
+          name="course"
+          placeholder="Course"
+          type="text"
+        />
+        <input
+          class="p-2 border border-gray-500"
+          name="year"
+          placeholder="Year"
+          type="number"
+        />
+
+        <button
+          class="cursor-pointer bg-green-700 text-white p-2"
+          type="submit"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

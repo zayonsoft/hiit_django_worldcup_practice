@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Student</title>
+    <style>
+      body {
+        padding: 15px 50px;
+      }
+      .grid {
+        display: grid;
+      }
+      .bold {
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+      <div>
+        <p class="bold">Matric Number:</p>
+        <p>{{student.matric_number}}</p>
+      </div>
+      <div>
+        <p class="bold">First Name:</p>
+        <p>{{student.first_name}}</p>
+      </div>
+      <div>
+        <p class="bold">Last Name:</p>
+        <p>{{student.last_name}}</p>
+      </div>
+      <div>
+        <p class="bold">Middle Name:</p>
+        <p>{{student.middle_name}}</p>
+      </div>
+      <div>
+        <p class="bold">Course:</p>
+        <p>{{student.course}}</p>
+      </div>
+      <div>
+        <p class="bold">Year:</p>
+        <p>{{student.year}}</p>
+      </div>
+    </div>
+  </body>
+</html>

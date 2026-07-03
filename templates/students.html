@@ -16,25 +16,32 @@
       td {
         border: 2px solid black;
         padding: 8px;
-        text-align: left;
+        text-align: center;
       }
       th {
         background-color: #05077d;
         color: whitesmoke;
       }
+
+      .btn-link {
+        background-color: blue;
+        color: white;
+        text-decoration: none;
+        padding: 4px;
+      }
     </style>
   </head>
   <body>
-    <h2>Name of Students by {{programmer_name}}</h2>
+    <h2>Name of Students</h2>
+    <h2>Number of Students: {{students.count}}</h2>
+    <a class="btn-link" href="/add_students">Add New Student +</a>
     <table>
       <!-- Table Header Row -->
       <tr>
         <th>Matric No</th>
         <th>First Name</th>
         <th>Last Name</th>
-        <th>Middle Name</th>
-        <th>Course</th>
-        <th>Year</th>
+        <th>View</th>
       </tr>
       <!-- Table Data Row 1 -->
       {% for student in students %}
@@ -42,7 +49,9 @@
         <td>{{student.matric_number}}</td>
         <td>{{student.first_name}}</td>
         <td>{{student.last_name}}</td>
-        <td>{{student.middle_name}}</td>
+        <td>
+          <a class="btn-link" href="/students/{{student.id}}">View student</a>
+        </td>
       </tr>
       {% endfor %}
     </table>
